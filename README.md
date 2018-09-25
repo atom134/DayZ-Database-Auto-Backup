@@ -1,2 +1,2 @@
-# DayZ-Database-Backup
-To make backup of your DayZ database with a batch file and to automate it with Windows Task Scheduler.
+# DayZ-Database-Auto-Backup
+Backup DayZ Database With Date & Time Using 7zip & Windows Task Scheduler
