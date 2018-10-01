@@ -1,4 +1,4 @@
-# DayZ-Database-Auto-Backup
+# DayZ-Database-Auto-Backup [Download](https://github.com/XxFri3ndlyxX/DayZ-Database-Auto-Backup/releases/tag/v2.0)
 Backup DayZ Database With Date & Time Using 7zip & Windows Task Scheduler
 
 I know it's very basic script. But i thought some people would want to use it. I'm sure there is better ways to do it. Anyway here it is.
@@ -98,5 +98,3 @@ Modified the bat file because it would not archive files that are being read by 
 Thanks to @Quackdot for telling me my mistake and offering a workaround.
 
 Thanks to @blkcamarors for giving me the idea of using Bec to start the .bat
-
-https://github.com/XxFri3ndlyxX/DayZ-Database-Auto-Backup/tree/v2.0
