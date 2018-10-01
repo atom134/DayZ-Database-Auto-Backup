@@ -98,3 +98,5 @@ Modified the bat file because it would not archive files that are being read by 
 Thanks to @Quackdot for telling me my mistake and offering a workaround.
 
 Thanks to @blkcamarors for giving me the idea of using Bec to start the .bat
+
+https://github.com/XxFri3ndlyxX/DayZ-Database-Auto-Backup/tree/v2.0
