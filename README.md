@@ -2,8 +2,8 @@
 Backup DayZ Database With Date & Time Using 7zip & Windows Task Scheduler
 
 I know it's very basic script. But i thought some people would want to use it. I'm sure there is better ways to do it. Anyway here it is.
-- Create a file and name it DayZ_Database_Backup.bat   or whatever name you want.
-- Within the file you just created add the following
+- **Create a file** and name it DayZ_Database_Backup.bat   or whatever name you want.
+- Within the file you just created **add the following**
 ```
 @ECHO OFF
 
@@ -16,20 +16,21 @@ xcopy /O /X /E /H /K /Y "%SrcFolder%" "%TempFolder%"
 
 "C:\Program Files\7-Zip\7z" a "%DestPath%\DayZ_Database.%Dt%.7z" "%TempFolder%"
 ```
-- Make sure you have installed 7zip
+- **Make sure** you have installed 7zip
 - SrcFolder is where you add path location of your DayZ server
 - DestPath is where you want the zip file to move to.
 - TempFolder is where you create a folder so when the script makes your backup and the file are in use, this will make sure the backup works correctly.
 - The last line is where your 7zip is installed and the name of the backup you made. So if you want Your zip file to be name DayZ_Backup then change DayZ_Database to DayZ_Backup on that line.
 This will backup your database in a zip file with the name you've chosen with its date and time.
 
-Method 1 (Using Bec Scheduler.xml with .exe) Recommended
 
-With this method, you will convert your bat file into a exe file which will get rid of the cmd popup if you select it.
+**Method 1 (Using Bec Scheduler.xml with .exe) Recommended**
 
-Convert the bat file to exe with this tool or any tool of your choice.
+**With this method**, you will **convert your bat file into a exe** file which will get rid of the cmd popup if you select it.
 
-Add the following code to your Bec scheduler.xml
+**Convert the bat file to exe** with this [Tool](https://www.techworld.com/download/system-desktop-tools/bat-exe-converter-309-3329959/) or any tool of your choice.
+
+**Add the following code** to your Bec scheduler.xml
 
 ```
 <!-- Start Database Backups -->
@@ -42,17 +43,17 @@ Add the following code to your Bec scheduler.xml
     </job>
 <!-- End Database Backups -->
 ```
-Make sure to
+**Make sure to**
 
-- Change Job Id
-- Change Path location of your exe file which you converted your bat file.
+- Change **Job Id**
+- Change **Path** location of your **exe file** which you converted your **bat file**.
 
 
-Method 2 (Using Bec Scheduler.xml with bat file) Recommended
+**Method 2 (Using Bec Scheduler.xml with bat file) Recommended**
 
 This method will make your backup run by the scheduler.xml and a quick cmd prompt will show briefly.
 
-Add the following code to your Bec scheduler.xml
+**Add the following code** to your Bec scheduler.xml
 
 ```
 <!-- Start Database Backups -->
@@ -65,13 +66,13 @@ Add the following code to your Bec scheduler.xml
     </job>
 <!-- End Database Backups -->
 ```
-Make sure to
+**Make sure to**
 
-- Change Job Id
-- Change Path location of your bat file.
+- Change **Job Id**
+- Change **Path** location of your **bat file**.
 
 
-Method 3 ( Using Windows Task Scheduler) Last Resorts
+**Method 3 ( Using Windows Task Scheduler) Last Resorts**
 
 In this method, we will be using Windows Task Scheduler.
 
