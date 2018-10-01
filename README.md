@@ -24,32 +24,7 @@ xcopy /O /X /E /H /K /Y "%SrcFolder%" "%TempFolder%"
 This will backup your database in a zip file with the name you've chosen with its date and time.
 
 
-**Method 1 (Using Bec Scheduler.xml with .exe) Recommended**
-
-**With this method**, you will **convert your bat file into a exe** file which will get rid of the cmd popup if you select it.
-
-**Convert the bat file to exe** with this [Tool](https://www.techworld.com/download/system-desktop-tools/bat-exe-converter-309-3329959/) or any tool of your choice.
-
-**Add the following code** to your Bec scheduler.xml
-
-```
-<!-- Start Database Backups -->
-    <job id='45'>
-        <day>1,2,3,4,5,6,7</day>
-        <start>000060</start>
-        <runtime>001500</runtime>
-        <loop>0</loop>
-        <cmd>C:\Servers\DayZServer\battleye\Bec\Backups\DayZ_Database_Backup.exe</cmd>
-    </job>
-<!-- End Database Backups -->
-```
-**Make sure to**
-
-- Change **Job Id**
-- Change **Path** location of your **exe file** which you converted your **bat file**.
-
-
-**Method 2 (Using Bec Scheduler.xml with bat file) Recommended**
+**Method 1 (Using Bec Scheduler.xml with bat file) Recommended**
 
 This method will make your backup run by the scheduler.xml and a quick cmd prompt will show briefly.
 
@@ -72,7 +47,7 @@ This method will make your backup run by the scheduler.xml and a quick cmd promp
 - Change **Path** location of your **bat file**.
 
 
-**Method 3 ( Using Windows Task Scheduler) Last Resorts**
+**Method 2 ( Using Windows Task Scheduler) Last Resorts**
 
 In this method, we will be using Windows Task Scheduler.
 
