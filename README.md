@@ -22,7 +22,59 @@ xcopy /O /X /E /H /K /Y "%SrcFolder%" "%TempFolder%"
 - TempFolder is where you create a folder so when the script makes your backup and the file are in use, this will make sure the backup works correctly.
 - The last line is where your 7zip is installed and the name of the backup you made. So if you want Your zip file to be name DayZ_Backup then change DayZ_Database to DayZ_Backup on that line.
 This will backup your database in a zip file with the name you've chosen with its date and time.
-Next to make it that it automates by itself. You will need to make a task using Task Scheduler.
+
+Method 1 (Using Bec Scheduler.xml with .exe) Recommended
+
+With this method, you will convert your bat file into a exe file which will get rid of the cmd popup if you select it.
+
+Convert the bat file to exe with this tool or any tool of your choice.
+
+Add the following code to your Bec scheduler.xml
+
+```
+<!-- Start Database Backups -->
+    <job id='45'>
+        <day>1,2,3,4,5,6,7</day>
+        <start>000060</start>
+        <runtime>001500</runtime>
+        <loop>0</loop>
+        <cmd>C:\Servers\DayZServer\battleye\Bec\Backups\DayZ_Database_Backup.exe</cmd>
+    </job>
+<!-- End Database Backups -->
+```
+Make sure to
+
+- Change Job Id
+- Change Path location of your exe file which you converted your bat file.
+
+
+Method 2 (Using Bec Scheduler.xml with bat file) Recommended
+
+This method will make your backup run by the scheduler.xml and a quick cmd prompt will show briefly.
+
+Add the following code to your Bec scheduler.xml
+
+```
+<!-- Start Database Backups -->
+    <job id='45'>
+        <day>1,2,3,4,5,6,7</day>
+        <start>000060</start>
+        <runtime>001500</runtime>
+        <loop>0</loop>
+        <cmd>C:\Servers\DayZServer\battleye\Bec\Backups\DayZ_Database_Backup.bat</cmd>
+    </job>
+<!-- End Database Backups -->
+```
+Make sure to
+
+- Change Job Id
+- Change Path location of your bat file.
+
+
+Method 3 ( Using Windows Task Scheduler) Last Resorts
+
+In this method, we will be using Windows Task Scheduler.
+
 - Search for Task Scheduler and open it
 - On the right side, Click Create Task
 - Write the name you want the task to be
@@ -40,6 +92,8 @@ Next to make it that it automates by itself. You will need to make a task using 
 - That's it your done and now a backup of your database with date and time will be done automatically for you.
 Let me know if you have any problem.
 
-Edited the bat file because it can't archive files that are being read by another process, so files like players.db and occasionally the binary files will also fail. And players.db is obviously, very important.
+Modified the bat file because it would not archive files that are being read by another process (when dayz is running) and the backup would fail.
 
 Thanks to @Quackdot for telling me my mistake and offering a workaround.
+
+Thanks to @blkcamarors for giving me the idea of using Bec to start the .bat
