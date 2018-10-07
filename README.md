@@ -5,6 +5,7 @@ I know it's very basic script. But i thought some people would want to use it. I
 A NEW method by @Aussie Cleetus using sql lite. Highly Recommended
 
 -Create a file and name it DayZ_Database_Backup.bat   or whatever name you want.
+
 -Within the file you just created add the following
 ```
 @ECHO OFF
