@@ -2,6 +2,7 @@
 Backup DayZ Database With Date & Time Using 7zip & Windows Task Scheduler
 
 I know it's very basic script. But i thought some people would want to use it. I'm sure there is better ways to do it. Anyway here it is.
+
 A NEW method by @Aussie Cleetus using sql lite. Highly Recommended
 
 -Create a file and name it DayZ_Database_Backup.bat   or whatever name you want.
